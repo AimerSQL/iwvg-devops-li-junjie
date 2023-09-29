@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SearchesTest {
@@ -36,5 +38,11 @@ public class SearchesTest {
     @Test
     void testFindFirstDecimalFractionByUserName() {
         assertEquals(0.0, searches.findFirstDecimalFractionByUserName("Oscar"));
+    }
+
+    @Test
+    void testFindFractionAdditionByUserId() {
+        Fraction expectedFraction = new Fraction(3, 1);
+        assertEquals(expectedFraction, searches.findFractionAdditionByUserId("1"));
     }
 }
