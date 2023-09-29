@@ -33,4 +33,8 @@ public class SearchesTest {
         assertEquals(expectedList, actualList);
     }
 
+    @Test
+    void testFindFirstDecimalFractionByUserName() {
+        assertEquals(0.0, searches.findFirstDecimalFractionByUserName("Oscar"));
+    }
 }
