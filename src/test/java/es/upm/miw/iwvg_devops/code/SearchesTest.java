@@ -23,4 +23,14 @@ public class SearchesTest {
         List<Double> actualList = actual.collect(Collectors.toList());
         assertEquals(expectedList, actualList);
     }
+
+    @Test
+    void testFindUserFamilyNameBySomeImproperFraction() {
+        Stream<String> expected = Stream.of("Fernandez", "Blanco","López","Torres","Torres");
+        Stream<String> actual = searches.findUserFamilyNameBySomeImproperFraction();
+        List<String> expectedList = expected.collect(Collectors.toList());
+        List<String> actualList = actual.collect(Collectors.toList());
+        assertEquals(expectedList, actualList);
+    }
+
 }
