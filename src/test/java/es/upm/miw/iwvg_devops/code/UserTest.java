@@ -74,4 +74,32 @@ public class UserTest {
         assertEquals(expected, user.toString());
     }
 
+    @Test
+    void testSetName() {
+        String newName = "Jane";
+        user.setName(newName);
+        assertEquals(newName, user.getName());
+    }
+
+    @Test
+    void testSetAndGetFamilyName() {
+        String newFamilyName = "Smith";
+        user.setFamilyName(newFamilyName);
+        assertEquals(newFamilyName, user.getFamilyName());
+    }
+
+    @Test
+    void testFullNameAfterNameChange() {
+        String newName = "Jane";
+        user.setName(newName);
+        assertEquals(newName + " " + user.getFamilyName(), user.fullName());
+    }
+
+    @Test
+    void testInitialsAfterNameChange() {
+        String newName = "Jane";
+        user.setName(newName);
+        assertEquals(newName.substring(0, 1) + ".", user.initials());
+    }
+
 }
